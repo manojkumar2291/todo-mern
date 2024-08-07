@@ -1,5 +1,5 @@
 const mongoose=require("mongoose");
-mongoose.connect("mongodb+srv://manoj:manoj@cluster0.q0hhtbe.mongodb.net/todos")
+mongoose.connect("enter your db url/database name")
 const todoSchema=mongoose.Schema({
 title:String,
 description:String,
