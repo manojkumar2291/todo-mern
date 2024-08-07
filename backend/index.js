@@ -10,7 +10,7 @@ app.use(express.json())
 app.use(cors({
     origin:'http://localhost:5173'
 }));
-
+//list all todos
 app.get('/todos',async function(req,res){
     const todos= await todo.find({});
     res.json({
@@ -18,6 +18,8 @@ app.get('/todos',async function(req,res){
     })
 
 });
+
+//create new todo
 app.post('/todo',async function(req,res){
     const createpayload=req.body;
     const parsepayload=createtodo.safeParse(createpayload);
@@ -34,10 +36,12 @@ app.post('/todo',async function(req,res){
         completed:false
     })
     res.json({
-        msg:'to do created'
+        msg:'to do added'
     })
 });
 
+
+//mark as completed
 app.put('/completed', async function(req,res){
     //const createpayload=req.body;
     const parsepayload=updatetodo.safeParse(req.body);
@@ -58,5 +62,17 @@ app.put('/completed', async function(req,res){
     })
 
 });
-app.delete('/delete',async function(req,res){} )
+
+//delete todo
+app.delete('/delete',async function(req,res){
+    const parsepayload=updatetodo.safeParse(req.body)
+    if(!parsepayload.success){
+        res.json({
+            msg:'you sent wrong inputs'
+        })
+        return;
+    }
+    await todo.deleteOne({_id:req.body.id})
+    res.json({msg:'deleted todo'});
+} )
 app.listen(3000);
