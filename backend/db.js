@@ -1,9 +1,25 @@
-const mongoose=require("mongoose");
-mongoose.connect("enter your db url/database name")
-const todoSchema=mongoose.Schema({
-title:String,
-description:String,
-completed:Boolean
+const mongoose = require("mongoose");
+require("dotenv").config(); 
+
+
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/todoApp";
+
+// Connect to MongoDB
+mongoose.connect(MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
 })
-const todo=mongoose.model('todos',todoSchema);
-module.exports={todo}
+  .then(() => console.log("✅ Connected to MongoDB"))
+  .catch((err) => console.error("❌ MongoDB Connection Error:", err));
+
+// Define Schema
+const todoSchema = new mongoose.Schema({
+  title: { type: String, required: true },
+  description: { type: String, required: true },
+  completed: { type: Boolean, default: false }
+});
+
+// Create Model
+const Todo = mongoose.model("Todo", todoSchema);
+
+module.exports = { Todo };

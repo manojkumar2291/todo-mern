@@ -4,11 +4,12 @@ const cors =require('cors')
 const { createtodo, updatetodo } = require('./types');
 const { todo } = require('./db');
 const app=express();
+require("dotenv").config(); 
 
 
 app.use(express.json())
 app.use(cors({
-    origin:'http://localhost:5173'
+    origin:process.env.FRONTEND_VITE
 }));
 //list all todos
 app.get('/todos',async function(req,res){
