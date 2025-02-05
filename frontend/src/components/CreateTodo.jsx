@@ -9,7 +9,7 @@ export function CreateTodo() {
 
   const handleSubmit = async () => {
     try {
-      const response = await fetch(`${backendUrl}/todo`, {
+      const response = await fetch(`http://localhost:3000/todo`, {
         method: "POST",
         body: JSON.stringify({ title, description }),
         headers: { "Content-Type": "application/json" },
