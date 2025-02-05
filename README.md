@@ -29,13 +29,13 @@ Deployment: Vercel (Frontend), Render (Backend)
 📸 Screenshots
 
 📌 Todo List View
-![alttext][]
+![alttext](todos.jpg)
 
 📌 Adding a Todo
-![alttext][]
+![alttext](addtodo.jpg)
 
 📌 Marking as Completed
-![alttext][]
+![alttext](completed.jpg)
 
 ⚡ Installation & Setup
 1️⃣ Clone the Repository
