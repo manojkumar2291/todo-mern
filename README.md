@@ -15,17 +15,27 @@ A simple and responsive Todo List Application built using React, Tailwind CSS, E
 
 
 🛠️ Tech Stack
+
 Frontend: React, Tailwind CSS
+
 Backend: Node.js, Express.js
+
 Database: MongoDB
+
 State Management: React Hooks
+
 Deployment: Vercel (Frontend), Render (Backend)
+
 📸 Screenshots
+
 📌 Todo List View
+![alttext][]
 
 📌 Adding a Todo
+![alttext][]
 
 📌 Marking as Completed
+![alttext][]
 
 ⚡ Installation & Setup
 1️⃣ Clone the Repository
