@@ -64,15 +64,20 @@ REACT_APP_BACKEND_URL=http://localhost:5000
 npm run dev
 ```
 🌍 Live Demo
+
 🔗 Live Link: [Todo App](https://todo-mern-beryl.vercel.app/)
+
 🔗 GitHub Repo: [GitHub](https://github.com/manojkumar2291/todo-mern)
 
 🤝 Contributing
+
 Feel free to submit issues and pull requests to improve the project!
 
 📜 License
+
 This project is open-source under the MIT License.
 
 💙 Support
+
 If you like this project, leave a ⭐ on GitHub and follow me on LinkedIn! 🚀
 
