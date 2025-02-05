@@ -2,7 +2,7 @@ const express=require('express');
 const jwt=require('jsonwebtoken');
 const cors =require('cors')
 const { createtodo, updatetodo } = require('./types');
-const { todo } = require('./db');
+const { Todo } = require('./db');
 const app=express();
 require("dotenv").config(); 
 
@@ -13,7 +13,7 @@ app.use(cors({
 }));
 //list all todos
 app.get('/todos',async function(req,res){
-    const todos= await todo.find({});
+    const todos= await Todo.find({});
     res.json({
         todos
     })
@@ -31,7 +31,7 @@ app.post('/todo',async function(req,res){
         return;
     }
     //mongodb
-    await todo.create({
+    await Todo.create({
         title:createpayload.title,
         description:createpayload.description,
         completed:false
@@ -53,7 +53,7 @@ app.put('/completed', async function(req,res){
         return;
     }
     
-    await todo.updateOne({
+    await Todo.updateOne({
         _id:req.body.id
     },{ 
         completed:req.body.completed
@@ -73,7 +73,7 @@ app.delete('/delete',async function(req,res){
         })
         return;
     }
-    await todo.deleteOne({_id:req.body.id})
+    await Todo.deleteOne({_id:req.body.id})
     res.json({msg:'deleted todo'});
 } )
 app.listen(3000);
