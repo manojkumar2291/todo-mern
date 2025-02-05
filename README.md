@@ -2,11 +2,17 @@
 A simple and responsive Todo List Application built using React, Tailwind CSS, Express.js, and MongoDB. This app allows users to create, update, and delete their todos efficiently.
 
 🚀 Features
+
 ✅ Add a new todo
+
 ✅ Mark todos as completed
+
 ✅ Delete todos
+
 ✅ Responsive UI
+
 ✅ MongoDB as Database
+
 
 🛠️ Tech Stack
 Frontend: React, Tailwind CSS
